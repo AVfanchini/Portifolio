@@ -63,6 +63,7 @@ address {
   --color-primary:         #1A2744;
   --color-primary-hover:   #14203a;
   --color-primary-light:   #2a3f6e;
+  --color-accent--att:          #c4d4f7;
   --color-accent:          #2563EB;
   --color-accent-hover:    #1d4ed8;
   --color-bg:              #FFFFFF;
@@ -498,6 +499,67 @@ p {
   margin-top: var(--space-sm);
 }
 
+/* ── IDIOMAS ──────────────────────────────── */
+.idiomas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .idiomas__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.lang-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.lang-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.lang-card__name {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.lang-card__dots {
+  display: flex;
+  gap: 8px;
+}
+
+.lang-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-accent);
+  background: transparent;
+  transition: background var(--transition-fast);
+}
+
+.lang-dot--filled {
+  background: var(--color-accent);
+}
+
+.lang-card__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
 /* --- Timeline (Experiências) --- */
 
 .timeline {
@@ -922,7 +984,7 @@ p {
   font-weight: var(--font-semibold);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: var(--color-accent--att);
   margin-bottom: 2.5rem;
 }
 
