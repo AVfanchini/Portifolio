@@ -773,10 +773,20 @@ p {
 }
 
 .nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: var(--text-md);
   font-weight: var(--font-bold);
   color: #fff;
   letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.nav__logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
   flex-shrink: 0;
 }
 
