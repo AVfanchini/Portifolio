@@ -78,25 +78,44 @@
        HEADER — Navegação principal
        ============================================================ -->
   <header class="header" role="banner">
-    <nav class="nav container" aria-label="Navegação principal">
+    <nav class="nav container" aria-label="Navegação principal" data-i18n-aria="nav.ariaLabel">
       <a href="#hero" class="nav__brand">
         <img src="img/logo.svg" alt="" class="nav__logo" width="32" height="32" aria-hidden="true" />
         André Fanchini
       </a>
 
-      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+      <button type="button" class="lang-toggle lang-toggle--desktop"
+              aria-label="Alternar para inglês"
+              data-i18n-aria="nav.langToggle"
+              aria-pressed="false">
+        <span class="lang-toggle__option lang-toggle__option--active" aria-hidden="true">PT</span>
+        <span class="lang-toggle__divider" aria-hidden="true">|</span>
+        <span class="lang-toggle__option" aria-hidden="true">EN</span>
+      </button>
+
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="nav.openMenu">
         <span class="nav__toggle-bar"></span>
         <span class="nav__toggle-bar"></span>
         <span class="nav__toggle-bar"></span>
       </button>
 
       <ul class="nav__menu" id="nav-menu" role="list">
-        <li><a href="#numeros"      class="nav__link">Números</a></li>
-        <li><a href="#abordagem"    class="nav__link">Abordagem</a></li>
-        <li><a href="#metodologias" class="nav__link">Metodologias</a></li>
-        <li><a href="#experiencias" class="nav__link">Experiências</a></li>
-        <li><a href="#formacao"     class="nav__link">Formação</a></li>
-        <li><a href="#contato"      class="nav__link nav__link--cta">Contato</a></li>
+        <li><a href="#numeros"      class="nav__link" data-i18n="nav.numeros">Números</a></li>
+        <li><a href="#abordagem"    class="nav__link" data-i18n="nav.abordagem">Abordagem</a></li>
+        <li><a href="#metodologias" class="nav__link" data-i18n="nav.metodologias">Metodologias</a></li>
+        <li><a href="#experiencias" class="nav__link" data-i18n="nav.experiencias">Experiências</a></li>
+        <li><a href="#formacao"     class="nav__link" data-i18n="nav.formacao">Formação</a></li>
+        <li><a href="#contato"      class="nav__link nav__link--cta" data-i18n="nav.contato">Contato</a></li>
+        <li class="nav__lang-item">
+          <button type="button" class="lang-toggle lang-toggle--mobile"
+                  aria-label="Alternar para inglês"
+                  data-i18n-aria="nav.langToggle"
+                  aria-pressed="false">
+            <span class="lang-toggle__option lang-toggle__option--active" aria-hidden="true">PT</span>
+            <span class="lang-toggle__divider" aria-hidden="true">|</span>
+            <span class="lang-toggle__option" aria-hidden="true">EN</span>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -106,22 +125,22 @@
     <!-- ============================================================
          HERO — Apresentação estratégica
          ============================================================ -->
-    <section id="hero" class="hero" aria-label="Apresentação">
+    <section id="hero" class="hero" aria-label="Apresentação" data-i18n-aria="hero.ariaLabel">
       <div class="hero__container container">
 
         <div class="hero__content">
-          <p class="hero__eyebrow">Engenheiro · Gestor de projetos · Gestão Empresarial </p>
-          <h1 class="hero__title">Resultados mensuráveis.<br>Operações mais eficientes.</h1>
-          <p class="hero__subtitle">
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">Engenheiro · Gestor de projetos · Gestão Empresarial</p>
+          <h1 class="hero__title" data-i18n-html="hero.headline">Resultados mensuráveis.<br>Operações mais eficientes.</h1>
+          <p class="hero__subtitle" data-i18n="hero.subtitle">
             Transformo desafios operacionais em crescimento sustentável — unindo
             rigor técnico, Lean Six Sigma e gerenciamento de projetos para gerar
             impacto real nos resultados do negócio.
           </p>
           <div class="hero__cta-group">
-            <a href="mailto:andrevinicius.fanchini@gmail.com" class="btn btn--primary">
+            <a href="mailto:andrevinicius.fanchini@gmail.com" class="btn btn--primary" data-i18n="hero.ctaContact">
               Entre em Contato
             </a>
-            <a href="#experiencias" class="btn btn--outline">
+            <a href="#experiencias" class="btn btn--outline" data-i18n="hero.ctaExp">
               Ver Experiências
             </a>
           </div>
@@ -131,6 +150,7 @@
           <img
             src="img/perfil.png"
             alt="André Fanchini — Consultor de Gestão"
+            data-i18n-alt="hero.imgAlt"
             class="hero__image"
             width="400"
             height="400"
@@ -144,22 +164,22 @@
     <!-- ============================================================
          NÚMEROS — Indicadores de performance
          ============================================================ -->
-    <section id="numeros" class="numeros section section--alt" aria-label="Indicadores de performance">
+    <section id="numeros" class="numeros section section--alt" aria-label="Indicadores de performance" data-i18n-aria="numeros.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Resultados que falam por si</h2>
-        <p class="section__subtitle">Impacto mensurável entregue em projetos reais.</p>
+        <h2 class="section__title" data-i18n="numeros.title">Resultados que falam por si</h2>
+        <p class="section__subtitle" data-i18n="numeros.subtitle">Impacto mensurável entregue em projetos reais.</p>
 
         <!-- Destaque estático — não animado -->
         <div class="numeros__highlight">
-          <div class="numeros__highlight-value" aria-label="Sete por cento de aumento no EBIT">+7%</div>
+          <div class="numeros__highlight-value" aria-label="Sete por cento de aumento no EBIT" data-i18n-aria="numeros.highlightAriaLabel">+7%</div>
           <div class="numeros__highlight-text">
-            <span class="numeros__highlight-label">EBIT em cliente com indústria</span>
-            <span class="numeros__highlight-desc">Principal resultado entregue via reestruturação de processos e gestão de qualidade</span>
+            <span class="numeros__highlight-label" data-i18n="numeros.highlightLabel">EBIT em cliente com indústria</span>
+            <span class="numeros__highlight-desc" data-i18n="numeros.highlightDesc">Principal resultado entregue via reestruturação de processos e gestão de qualidade</span>
           </div>
         </div>
 
-        <!-- Ticker infinito com outros indicadores -->
-        <div class="ticker" aria-label="Outros indicadores de performance" role="marquee">
+        <!-- Ticker infinito com outros indicadores — reconstruído pelo JS i18n -->
+        <div class="ticker" aria-label="Outros indicadores de performance" role="marquee" data-i18n-aria="numeros.tickerAriaLabel">
           <div class="ticker__track" aria-hidden="false">
             <span class="ticker__item">+50 Projetos estruturados</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
@@ -174,7 +194,7 @@
             <span class="ticker__item">Implantação da ISO 9001</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
             <!-- Duplicados para loop contínuo -->
-            <span class="ticker__item" aria-hidden="true">+40 Projetos estruturados</span>
+            <span class="ticker__item" aria-hidden="true">+50 Projetos estruturados</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
             <span class="ticker__item" aria-hidden="true">+12% em OEE em cliente industrial</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
@@ -195,17 +215,17 @@
     <!-- ============================================================
          ABORDAGEM — Como trabalho (3 etapas)
          ============================================================ -->
-    <section id="abordagem" class="abordagem section" aria-label="Metodologia de trabalho">
+    <section id="abordagem" class="abordagem section" aria-label="Metodologia de trabalho" data-i18n-aria="abordagem.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Como trabalho</h2>
-        <p class="section__subtitle">Um processo estruturado em três etapas para transformar desafios operacionais em resultados sustentáveis.</p>
+        <h2 class="section__title" data-i18n="abordagem.title">Como trabalho</h2>
+        <p class="section__subtitle" data-i18n="abordagem.subtitle">Um processo estruturado em três etapas para transformar desafios operacionais em resultados sustentáveis.</p>
 
         <div class="abordagem__grid">
 
           <article class="step-card">
             <div class="step-card__number" aria-hidden="true">01</div>
-            <h3 class="step-card__title">Diagnóstico baseado em dados</h3>
-            <p class="step-card__body">
+            <h3 class="step-card__title" data-i18n="abordagem.step1.title">Diagnóstico baseado em dados</h3>
+            <p class="step-card__body" data-i18n="abordagem.step1.body">
               Coleta estruturada de dados, análise de causa-raiz com Ishikawa e Pareto,
               e mapeamento detalhado do estado atual para identificar gaps operacionais
               com precisão técnica.
@@ -214,8 +234,8 @@
 
           <article class="step-card">
             <div class="step-card__number" aria-hidden="true">02</div>
-            <h3 class="step-card__title">Redesenho e Estruturação</h3>
-            <p class="step-card__body">
+            <h3 class="step-card__title" data-i18n="abordagem.step2.title">Redesenho e Estruturação</h3>
+            <p class="step-card__body" data-i18n="abordagem.step2.body">
               Mapeamento de processos com BPMN, aplicação de Lean Six Sigma e DMAIC
               para redesenhar fluxos, eliminar desperdícios e estruturar sistemas de
               gestão eficientes.
@@ -224,8 +244,8 @@
 
           <article class="step-card">
             <div class="step-card__number" aria-hidden="true">03</div>
-            <h3 class="step-card__title">Resultados Sustentáveis</h3>
-            <p class="step-card__body">
+            <h3 class="step-card__title" data-i18n="abordagem.step3.title">Resultados Sustentáveis</h3>
+            <p class="step-card__body" data-i18n="abordagem.step3.body">
               Implementação de KPIs e governança de indicadores, capacitação de equipes
               e dashboards para garantir a eficiência das melhorias implementadas e a
               tomada de decisão orientada a dados.
@@ -239,38 +259,38 @@
     <!-- ============================================================
          METODOLOGIAS — Grid de competências
          ============================================================ -->
-    <section id="metodologias" class="metodologias section section--alt" aria-label="Metodologias e ferramentas">
+    <section id="metodologias" class="metodologias section section--alt" aria-label="Metodologias e ferramentas" data-i18n-aria="metodologias.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Metodologias</h2>
-        <p class="section__subtitle">Frameworks e ferramentas aplicados com rigor técnico para gerar eficiência e crescimento mensurável.</p>
+        <h2 class="section__title" data-i18n="metodologias.title">Metodologias</h2>
+        <p class="section__subtitle" data-i18n="metodologias.subtitle">Frameworks e ferramentas aplicados com rigor técnico para gerar eficiência e crescimento mensurável.</p>
 
         <div class="metodologias__grid">
 
           <article class="method-card">
             <span class="method-card__icon" aria-hidden="true">⚙️</span>
-            <h3 class="method-card__title">Lean Six Sigma · DMAIC</h3>
-            <p class="method-card__desc">
+            <h3 class="method-card__title" data-i18n="metodologias.card1.title">Lean Six Sigma · DMAIC</h3>
+            <p class="method-card__desc" data-i18n="metodologias.card1.desc">
               Metodologia para redução de variabilidade e eliminação de desperdícios em
               processos industriais, com foco em eficiência e qualidade.
             </p>
-            <ul class="method-card__tags" aria-label="Competências em Lean Six Sigma">
+            <ul class="method-card__tags" aria-label="Competências em Lean Six Sigma" data-i18n-aria="metodologias.card1.tagsAriaLabel">
               <li class="tag">DFSS</li>
               <li class="tag">DMAIC</li>
               <li class="tag">Kaizen</li>
               <li class="tag">ROI</li>
-              <li class="tag">Gestão</li>
+              <li class="tag" data-i18n="metodologias.card1.tag5">Gestão</li>
             </ul>
           </article>
 
           <article class="method-card">
             <span class="method-card__icon" aria-hidden="true">🏆</span>
-            <h3 class="method-card__title">Gestão da Qualidade</h3>
-            <p class="method-card__desc">
+            <h3 class="method-card__title" data-i18n="metodologias.card2.title">Gestão da Qualidade</h3>
+            <p class="method-card__desc" data-i18n="metodologias.card2.desc">
               Implantação e manutenção de sistemas de qualidade com foco em conformidade,
               melhoria contínua e atendimento às normas regulatórias.
             </p>
-            <ul class="method-card__tags" aria-label="Competências em Gestão da Qualidade">
-              <li class="tag">Melhoria contínua</li>
+            <ul class="method-card__tags" aria-label="Competências em Gestão da Qualidade" data-i18n-aria="metodologias.card2.tagsAriaLabel">
+              <li class="tag" data-i18n="metodologias.card2.tag1">Melhoria contínua</li>
               <li class="tag">PDCA</li>
               <li class="tag">Pareto</li>
               <li class="tag">CEP</li>
@@ -279,30 +299,30 @@
 
           <article class="method-card">
             <span class="method-card__icon" aria-hidden="true">📋</span>
-            <h3 class="method-card__title">Gerenciamento de Projetos</h3>
-            <p class="method-card__desc">
+            <h3 class="method-card__title" data-i18n="metodologias.card3.title">Gerenciamento de Projetos</h3>
+            <p class="method-card__desc" data-i18n="metodologias.card3.desc">
               Estruturação e execução de projetos com metodologias ágeis e tradicionais,
               garantindo entregas dentro do escopo, prazo e custo.
             </p>
-            <ul class="method-card__tags" aria-label="Competências em Gerenciamento de Projetos">
+            <ul class="method-card__tags" aria-label="Competências em Gerenciamento de Projetos" data-i18n-aria="metodologias.card3.tagsAriaLabel">
               <li class="tag">PMBoK</li>
               <li class="tag">Scrum</li>
-              <li class="tag">Gestão</li>
-              <li class="tag">Prcocessos</li>
+              <li class="tag" data-i18n="metodologias.card3.tag3">Gestão</li>
+              <li class="tag" data-i18n="metodologias.card3.tag4">Processos</li>
             </ul>
           </article>
 
           <article class="method-card">
             <span class="method-card__icon" aria-hidden="true">📊</span>
-            <h3 class="method-card__title">Business Intelligence</h3>
-            <p class="method-card__desc">
+            <h3 class="method-card__title" data-i18n="metodologias.card4.title">Business Intelligence</h3>
+            <p class="method-card__desc" data-i18n="metodologias.card4.desc">
               Transformação de dados operacionais em dashboards e relatórios estratégicos
               para apoiar a tomada de decisão baseada em indicadores.
             </p>
-            <ul class="method-card__tags" aria-label="Competências em Business Intelligence">
-              <li class="tag">dashboards</li>
+            <ul class="method-card__tags" aria-label="Competências em Business Intelligence" data-i18n-aria="metodologias.card4.tagsAriaLabel">
+              <li class="tag" data-i18n="metodologias.card4.tag1">dashboards</li>
               <li class="tag">DRE</li>
-              <li class="tag">balanço</li>
+              <li class="tag" data-i18n="metodologias.card4.tag3">balanço</li>
               <li class="tag">KPIs</li>
             </ul>
           </article>
@@ -314,59 +334,59 @@
     <!-- ============================================================
          IDIOMAS — Classificação de proficiência
          ============================================================ -->
-    <section id="idiomas" class="idiomas section section--alt" aria-label="Idiomas">
+    <section id="idiomas" class="idiomas section section--alt" aria-label="Idiomas" data-i18n-aria="idiomas.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Idiomas</h2>
-        <p class="section__subtitle">Comunicação em múltiplos idiomas para atuação em contextos nacionais e internacionais.</p>
+        <h2 class="section__title" data-i18n="idiomas.title">Idiomas</h2>
+        <p class="section__subtitle" data-i18n="idiomas.subtitle">Comunicação em múltiplos idiomas para atuação em contextos nacionais e internacionais.</p>
 
         <div class="idiomas__grid">
 
           <div class="lang-card">
             <span class="lang-card__name">Português</span>
-            <div class="lang-card__dots" aria-label="Nível 5 de 5">
+            <div class="lang-card__dots" aria-label="Nível 5 de 5" data-i18n-aria="idiomas.lang1.dotsLabel">
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
             </div>
-            <span class="lang-card__label">Nativo</span>
+            <span class="lang-card__label" data-i18n="idiomas.lang1.label">Nativo</span>
           </div>
 
           <div class="lang-card">
             <span class="lang-card__name">Inglês</span>
-            <div class="lang-card__dots" aria-label="Nível 5 de 5">
+            <div class="lang-card__dots" aria-label="Nível 5 de 5" data-i18n-aria="idiomas.lang2.dotsLabel">
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
             </div>
-            <span class="lang-card__label">Fluente</span>
+            <span class="lang-card__label" data-i18n="idiomas.lang2.label">Fluente</span>
           </div>
 
           <div class="lang-card">
             <span class="lang-card__name">Espanhol</span>
-            <div class="lang-card__dots" aria-label="Nível 1 de 5">
+            <div class="lang-card__dots" aria-label="Nível 1 de 5" data-i18n-aria="idiomas.lang3.dotsLabel">
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
             </div>
-            <span class="lang-card__label">Básico</span>
+            <span class="lang-card__label" data-i18n="idiomas.lang3.label">Básico</span>
           </div>
 
           <div class="lang-card">
             <span class="lang-card__name">Francês</span>
-            <div class="lang-card__dots" aria-label="Nível 1 de 5">
+            <div class="lang-card__dots" aria-label="Nível 1 de 5" data-i18n-aria="idiomas.lang4.dotsLabel">
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
             </div>
-            <span class="lang-card__label">Básico</span>
+            <span class="lang-card__label" data-i18n="idiomas.lang4.label">Básico</span>
           </div>
 
         </div>
@@ -376,12 +396,12 @@
     <!-- ============================================================
          EXPERIÊNCIAS — Timeline profissional
          ============================================================ -->
-    <section id="experiencias" class="experiencias section" aria-label="Experiência profissional">
+    <section id="experiencias" class="experiencias section" aria-label="Experiência profissional" data-i18n-aria="experiencias.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Experiências</h2>
-        <p class="section__subtitle">Trajetória profissional com foco em resultados e melhoria contínua em empresas do setor industrial e alimentício.</p>
+        <h2 class="section__title" data-i18n="experiencias.title">Experiências</h2>
+        <p class="section__subtitle" data-i18n="experiencias.subtitle">Trajetória profissional com foco em resultados e melhoria contínua em empresas do setor industrial e alimentício.</p>
 
-        <ol class="timeline" aria-label="Linha do tempo profissional">
+        <ol class="timeline" aria-label="Linha do tempo profissional" data-i18n-aria="experiencias.timelineAriaLabel">
 
           <!-- 1. Aquila Consultoria -->
           <li class="timeline__item">
@@ -397,19 +417,19 @@
                   height="48"
                 />
                 <div class="timeline__meta">
-                  <h3 class="timeline__role">Consultor Associado</h3>
+                  <h3 class="timeline__role" data-i18n="experiencias.item1.role">Consultor Associado</h3>
                   <p class="timeline__company">Aquila Consultoria em Gestão</p>
-                  <time class="timeline__period" datetime="2024-10/2026-04">Out 2024 – Abr 2026</time>
+                  <time class="timeline__period" datetime="2024-10/2026-04" data-i18n="experiencias.item1.period">Out 2024 – Abr 2026</time>
                 </div>
               </header>
               <div class="timeline__body">
-                <p>
+                <p data-i18n="experiencias.item1.body">
                   Projetos de diagnóstico organizacional e melhoria operacional com ganhos médios de 15–20%
                   de produtividade. Mapeamento e redesenho de processos com Lean Six Sigma e BPMN,
                   implantação de sistemas de gestão, governança de KPIs e dashboards.
                 </p>
                 <div class="timeline__clients" aria-label="Clientes atendidos como consultor Aquila">
-                  <span class="timeline__clients-label">Clientes atendidos:</span>
+                  <span class="timeline__clients-label" data-i18n="experiencias.clientsLabel">Clientes atendidos:</span>
                   <div class="timeline__clients-logos">
                     <img
                       src="img/clientes/karina.png"
@@ -443,13 +463,13 @@
                   height="48"
                 />
                 <div class="timeline__meta">
-                  <h3 class="timeline__role">Coordenador de Qualidade</h3>
+                  <h3 class="timeline__role" data-i18n="experiencias.item2.role">Coordenador de Qualidade</h3>
                   <p class="timeline__company">Debken Indústria e Comércio de Plásticos</p>
-                  <time class="timeline__period" datetime="2023-04/2024-10">Abr 2023 – Out 2024</time>
+                  <time class="timeline__period" datetime="2023-04/2024-10" data-i18n="experiencias.item2.period">Abr 2023 – Out 2024</time>
                 </div>
               </header>
               <div class="timeline__body">
-                <p>
+                <p data-i18n="experiencias.item2.body">
                   Implantação e coordenação do sistema de gestão da qualidade, definição de critérios
                   de conformidade de materiais, qualificação de fornecedores e condução de auditorias
                   internas. Controles de processo com foco em redução de não conformidades.
@@ -472,13 +492,13 @@
                   height="48"
                 />
                 <div class="timeline__meta">
-                  <h3 class="timeline__role">Consultor de Processos e Qualidade</h3>
+                  <h3 class="timeline__role" data-i18n="experiencias.item3.role">Consultor de Processos e Qualidade</h3>
                   <p class="timeline__company">Soh Kombucha</p>
-                  <time class="timeline__period" datetime="2022-07/2022-12">Jul 2022 – Dez 2022</time>
+                  <time class="timeline__period" datetime="2022-07/2022-12" data-i18n="experiencias.item3.period">Jul 2022 – Dez 2022</time>
                 </div>
               </header>
               <div class="timeline__body">
-                <p>
+                <p data-i18n="experiencias.item3.body">
                   Estruturação do Manual de Boas Práticas de Fabricação (BPF), padronização de
                   processos produtivos, mapeamento de fluxos e implantação de controles de
                   não conformidades em startup do setor de bebidas fermentadas.
@@ -494,13 +514,13 @@
               <header class="timeline__card-header">
                 <div class="timeline__logo-placeholder" aria-hidden="true">L</div>
                 <div class="timeline__meta">
-                  <h3 class="timeline__role">Estagiário de Controle de Qualidade</h3>
+                  <h3 class="timeline__role" data-i18n="experiencias.item4.role">Estagiário de Controle de Qualidade</h3>
                   <p class="timeline__company">Legurmê</p>
-                  <time class="timeline__period" datetime="2021-04/2022-06">Abr 2021 – Jun 2022</time>
+                  <time class="timeline__period" datetime="2021-04/2022-06" data-i18n="experiencias.item4.period">Abr 2021 – Jun 2022</time>
                 </div>
               </header>
               <div class="timeline__body">
-                <p>
+                <p data-i18n="experiencias.item4.body">
                   Suporte na gestão da qualidade e desenvolvimento de procedimentos operacionais
                   padrão em empresa do setor alimentício.
                 </p>
@@ -515,19 +535,19 @@
     <!-- ============================================================
          FORMAÇÃO — Educação acadêmica
          ============================================================ -->
-    <section id="formacao" class="formacao section section--alt" aria-label="Formação acadêmica">
+    <section id="formacao" class="formacao section section--alt" aria-label="Formação acadêmica" data-i18n-aria="formacao.ariaLabel">
       <div class="container">
-        <h2 class="section__title">Formação</h2>
-        <p class="section__subtitle">Base técnica sólida combinando engenharia, gestão e certificações de excelência.</p>
+        <h2 class="section__title" data-i18n="formacao.title">Formação</h2>
+        <p class="section__subtitle" data-i18n="formacao.subtitle">Base técnica sólida combinando engenharia, gestão e certificações de excelência.</p>
 
         <div class="formacao__grid">
 
           <article class="edu-card">
             <div class="edu-card__icon" aria-hidden="true">🎓</div>
             <div class="edu-card__content">
-              <span class="edu-card__badge">MBA</span>
-              <h3 class="edu-card__title">Gestão de Projetos</h3>
-              <p class="edu-card__institution">Fundação Getulio Vargas — FGV</p>
+              <span class="edu-card__badge" data-i18n="formacao.card1.badge">MBA</span>
+              <h3 class="edu-card__title" data-i18n="formacao.card1.title">Gestão de Projetos</h3>
+              <p class="edu-card__institution" data-i18n="formacao.card1.institution">Fundação Getulio Vargas — FGV</p>
               <time class="edu-card__period" datetime="2024/2025">2024 – 2025</time>
             </div>
           </article>
@@ -535,9 +555,9 @@
           <article class="edu-card">
             <div class="edu-card__icon" aria-hidden="true">🔬</div>
             <div class="edu-card__content">
-              <span class="edu-card__badge">Graduação</span>
-              <h3 class="edu-card__title">Engenharia de Alimentos</h3>
-              <p class="edu-card__institution">Faculdade de Engenharia Salvador Arena</p>
+              <span class="edu-card__badge" data-i18n="formacao.card2.badge">Graduação</span>
+              <h3 class="edu-card__title" data-i18n="formacao.card2.title">Engenharia de Alimentos</h3>
+              <p class="edu-card__institution" data-i18n="formacao.card2.institution">Faculdade de Engenharia Salvador Arena</p>
               <time class="edu-card__period" datetime="2017/2022">2017 – 2022</time>
             </div>
           </article>
@@ -545,9 +565,9 @@
           <article class="edu-card">
             <div class="edu-card__icon" aria-hidden="true">⚗️</div>
             <div class="edu-card__content">
-              <span class="edu-card__badge">Técnico</span>
-              <h3 class="edu-card__title">Técnico em Química</h3>
-              <p class="edu-card__institution">Colégio Anchieta</p>
+              <span class="edu-card__badge" data-i18n="formacao.card3.badge">Técnico</span>
+              <h3 class="edu-card__title" data-i18n="formacao.card3.title">Técnico em Química</h3>
+              <p class="edu-card__institution" data-i18n="formacao.card3.institution">Colégio Anchieta</p>
               <time class="edu-card__period" datetime="2014/2017">2014 – 2017</time>
             </div>
           </article>
@@ -559,10 +579,10 @@
     <!-- ============================================================
          CONTATO — CTA final
          ============================================================ -->
-    <section id="contato" class="contato section" aria-label="Contato">
+    <section id="contato" class="contato section" aria-label="Contato" data-i18n-aria="contato.ariaLabel">
       <div class="container contato__container">
-        <h2 class="section__title contato__title">Vamos conversar?</h2>
-        <p class="contato__subtitle">
+        <h2 class="section__title contato__title" data-i18n="contato.title">Vamos conversar?</h2>
+        <p class="contato__subtitle" data-i18n="contato.subtitle">
           Estou disponível para novos projetos, parcerias e desafios.
           Entre em contato e vamos estruturar algo juntos.
         </p>
@@ -571,6 +591,8 @@
             href="mailto:andrevinicius.fanchini@gmail.com"
             class="btn btn--primary btn--lg"
             aria-label="Enviar e-mail para André Fanchini"
+            data-i18n="contato.btnEmail"
+            data-i18n-aria="contato.btnEmailAriaLabel"
           >
             Enviar E-mail
           </a>
@@ -579,6 +601,8 @@
             class="btn btn--outline btn--lg"
             download
             aria-label="Baixar currículo em PDF"
+            data-i18n="contato.btnCV"
+            data-i18n-aria="contato.btnCVAriaLabel"
           >
             Baixar CV
           </a>
@@ -598,11 +622,11 @@
        ============================================================ -->
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
-      <p class="footer__copy">© 2026 André Fanchini. Todos os direitos reservados.</p>
-      <nav class="footer__nav" aria-label="Links do rodapé">
-        <a href="#hero"                                     class="footer__link">Início</a>
-        <a href="resource/cv.pdf"                           class="footer__link" download>Currículo</a>
-        <a href="mailto:andrevinicius.fanchini@gmail.com"   class="footer__link">E-mail</a>
+      <p class="footer__copy" data-i18n="footer.copyright">© 2026 André Fanchini. Todos os direitos reservados.</p>
+      <nav class="footer__nav" aria-label="Links do rodapé" data-i18n-aria="footer.navAriaLabel">
+        <a href="#hero"                                     class="footer__link" data-i18n="footer.linkHome">Início</a>
+        <a href="resource/cv.pdf"                           class="footer__link" download data-i18n="footer.linkCV">Currículo</a>
+        <a href="mailto:andrevinicius.fanchini@gmail.com"   class="footer__link" data-i18n="footer.linkEmail">E-mail</a>
       </nav>
     </div>
   </footer>

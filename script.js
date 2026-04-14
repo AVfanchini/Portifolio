@@ -2,9 +2,10 @@
    script.js — Portfolio André Vinicius
    Módulos organizados como IIFEs independentes:
    1. Header — sombra ao rolar a página
-   2. Navegação mobile — hamburguer toggle
-   3. Animações de scroll — IntersectionObserver fade-up
-   4. Scroll suave — offset para nav fixa
+   2. Internacionalização (i18n) — alternância PT/EN
+   3. Navegação mobile — hamburguer toggle
+   4. Animações de scroll — IntersectionObserver fade-up
+   5. Scroll suave — offset para nav fixa
    ============================================================ */
 
 'use strict';
@@ -40,12 +41,417 @@
 
 
 /* ============================================================
-   MÓDULO 2 — NAVEGAÇÃO MOBILE (HAMBURGUER)
+   MÓDULO 2 — INTERNACIONALIZAÇÃO (i18n)
+   Gerencia alternância PT/EN com atributos data-i18n*,
+   localStorage e atualização do <html lang>.
+   Expõe window.i18n.t(key) para outros módulos.
+   ============================================================ */
+(function i18nModule() {
+  'use strict';
+
+  /* ── Dicionário completo ─────────────────────────────────── */
+  var TRANSLATIONS = {
+    pt: {
+      meta: {
+        title: 'André Fanchini | Consultor de Gestão & Especialista Six Sigma',
+        description: 'André Vinicius Fanchini de Azevedo — Engenheiro, Gestor de Projetos. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos.'
+      },
+      nav: {
+        ariaLabel:    'Navegação principal',
+        openMenu:     'Abrir menu',
+        closeMenu:    'Fechar menu',
+        langToggle:   'Alternar para inglês',
+        numeros:      'Números',
+        abordagem:    'Abordagem',
+        metodologias: 'Metodologias',
+        experiencias: 'Experiências',
+        formacao:     'Formação',
+        contato:      'Contato'
+      },
+      hero: {
+        ariaLabel:  'Apresentação',
+        eyebrow:    'Engenheiro · Gestor de projetos · Gestão Empresarial',
+        headline:   'Resultados mensuráveis.<br>Operações mais eficientes.',
+        subtitle:   'Transformo desafios operacionais em crescimento sustentável — unindo rigor técnico, Lean Six Sigma e gerenciamento de projetos para gerar impacto real nos resultados do negócio.',
+        ctaContact: 'Entre em Contato',
+        ctaExp:     'Ver Experiências',
+        imgAlt:     'André Fanchini — Consultor de Gestão'
+      },
+      numeros: {
+        ariaLabel:          'Indicadores de performance',
+        title:              'Resultados que falam por si',
+        subtitle:           'Impacto mensurável entregue em projetos reais.',
+        highlightAriaLabel: 'Sete por cento de aumento no EBIT',
+        highlightLabel:     'EBIT em cliente com indústria',
+        highlightDesc:      'Principal resultado entregue via reestruturação de processos e gestão de qualidade',
+        tickerAriaLabel:    'Outros indicadores de performance',
+        ticker: [
+          '+50 Projetos estruturados',
+          '+12% em OEE em cliente industrial',
+          '−30% custo não qualidade',
+          '+5 anos de experiência de mercado',
+          '+15% ganho de produtividade nos processos mapeados',
+          'Implantação da ISO 9001'
+        ]
+      },
+      abordagem: {
+        ariaLabel: 'Metodologia de trabalho',
+        title:     'Como trabalho',
+        subtitle:  'Um processo estruturado em três etapas para transformar desafios operacionais em resultados sustentáveis.',
+        step1: {
+          title: 'Diagnóstico baseado em dados',
+          body:  'Coleta estruturada de dados, análise de causa-raiz com Ishikawa e Pareto, e mapeamento detalhado do estado atual para identificar gaps operacionais com precisão técnica.'
+        },
+        step2: {
+          title: 'Redesenho e Estruturação',
+          body:  'Mapeamento de processos com BPMN, aplicação de Lean Six Sigma e DMAIC para redesenhar fluxos, eliminar desperdícios e estruturar sistemas de gestão eficientes.'
+        },
+        step3: {
+          title: 'Resultados Sustentáveis',
+          body:  'Implementação de KPIs e governança de indicadores, capacitação de equipes e dashboards para garantir a eficiência das melhorias implementadas e a tomada de decisão orientada a dados.'
+        }
+      },
+      metodologias: {
+        ariaLabel: 'Metodologias e ferramentas',
+        title:     'Metodologias',
+        subtitle:  'Frameworks e ferramentas aplicados com rigor técnico para gerar eficiência e crescimento mensurável.',
+        card1: {
+          title:         'Lean Six Sigma · DMAIC',
+          desc:          'Metodologia para redução de variabilidade e eliminação de desperdícios em processos industriais, com foco em eficiência e qualidade.',
+          tagsAriaLabel: 'Competências em Lean Six Sigma',
+          tag5:          'Gestão'
+        },
+        card2: {
+          title:         'Gestão da Qualidade',
+          desc:          'Implantação e manutenção de sistemas de qualidade com foco em conformidade, melhoria contínua e atendimento às normas regulatórias.',
+          tagsAriaLabel: 'Competências em Gestão da Qualidade',
+          tag1:          'Melhoria contínua'
+        },
+        card3: {
+          title:         'Gerenciamento de Projetos',
+          desc:          'Estruturação e execução de projetos com metodologias ágeis e tradicionais, garantindo entregas dentro do escopo, prazo e custo.',
+          tagsAriaLabel: 'Competências em Gerenciamento de Projetos',
+          tag3:          'Gestão',
+          tag4:          'Processos'
+        },
+        card4: {
+          title:         'Business Intelligence',
+          desc:          'Transformação de dados operacionais em dashboards e relatórios estratégicos para apoiar a tomada de decisão baseada em indicadores.',
+          tagsAriaLabel: 'Competências em Business Intelligence',
+          tag1:          'dashboards',
+          tag3:          'balanço'
+        }
+      },
+      idiomas: {
+        ariaLabel: 'Idiomas',
+        title:     'Idiomas',
+        subtitle:  'Comunicação em múltiplos idiomas para atuação em contextos nacionais e internacionais.',
+        lang1: { dotsLabel: 'Nível 5 de 5', label: 'Nativo'  },
+        lang2: { dotsLabel: 'Nível 5 de 5', label: 'Fluente' },
+        lang3: { dotsLabel: 'Nível 1 de 5', label: 'Básico'  },
+        lang4: { dotsLabel: 'Nível 1 de 5', label: 'Básico'  }
+      },
+      experiencias: {
+        ariaLabel:         'Experiência profissional',
+        title:             'Experiências',
+        subtitle:          'Trajetória profissional com foco em resultados e melhoria contínua em empresas do setor industrial e alimentício.',
+        timelineAriaLabel: 'Linha do tempo profissional',
+        clientsLabel:      'Clientes atendidos:',
+        item1: {
+          role:   'Consultor Associado',
+          period: 'Out 2024 – Abr 2026',
+          body:   'Projetos de diagnóstico organizacional e melhoria operacional com ganhos médios de 15–20% de produtividade. Mapeamento e redesenho de processos com Lean Six Sigma e BPMN, implantação de sistemas de gestão, governança de KPIs e dashboards.'
+        },
+        item2: {
+          role:   'Coordenador de Qualidade',
+          period: 'Abr 2023 – Out 2024',
+          body:   'Implantação e coordenação do sistema de gestão da qualidade, definição de critérios de conformidade de materiais, qualificação de fornecedores e condução de auditorias internas. Controles de processo com foco em redução de não conformidades.'
+        },
+        item3: {
+          role:   'Consultor de Processos e Qualidade',
+          period: 'Jul 2022 – Dez 2022',
+          body:   'Estruturação do Manual de Boas Práticas de Fabricação (BPF), padronização de processos produtivos, mapeamento de fluxos e implantação de controles de não conformidades em startup do setor de bebidas fermentadas.'
+        },
+        item4: {
+          role:   'Estagiário de Controle de Qualidade',
+          period: 'Abr 2021 – Jun 2022',
+          body:   'Suporte na gestão da qualidade e desenvolvimento de procedimentos operacionais padrão em empresa do setor alimentício.'
+        }
+      },
+      formacao: {
+        ariaLabel: 'Formação acadêmica',
+        title:     'Formação',
+        subtitle:  'Base técnica sólida combinando engenharia, gestão e certificações de excelência.',
+        card1: { badge: 'MBA',       title: 'Gestão de Projetos',      institution: 'Fundação Getulio Vargas — FGV' },
+        card2: { badge: 'Graduação', title: 'Engenharia de Alimentos',  institution: 'Faculdade de Engenharia Salvador Arena' },
+        card3: { badge: 'Técnico',   title: 'Técnico em Química',       institution: 'Colégio Anchieta' }
+      },
+      contato: {
+        ariaLabel:         'Contato',
+        title:             'Vamos conversar?',
+        subtitle:          'Estou disponível para novos projetos, parcerias e desafios. Entre em contato e vamos estruturar algo juntos.',
+        btnEmail:          'Enviar E-mail',
+        btnEmailAriaLabel: 'Enviar e-mail para André Fanchini',
+        btnCV:             'Baixar CV',
+        btnCVAriaLabel:    'Baixar currículo em PDF'
+      },
+      footer: {
+        navAriaLabel: 'Links do rodapé',
+        copyright:    '© 2026 André Fanchini. Todos os direitos reservados.',
+        linkHome:     'Início',
+        linkCV:       'Currículo',
+        linkEmail:    'E-mail'
+      }
+    },
+
+    en: {
+      meta: {
+        title: 'André Fanchini | Management Consultant & Six Sigma Specialist',
+        description: 'André Vinicius Fanchini de Azevedo — Engineer, Project Manager. Specialist in Lean Six Sigma, Quality Management, and Continuous Process Improvement.'
+      },
+      nav: {
+        ariaLabel:    'Main navigation',
+        openMenu:     'Open menu',
+        closeMenu:    'Close menu',
+        langToggle:   'Switch to Portuguese',
+        numeros:      'Numbers',
+        abordagem:    'Approach',
+        metodologias: 'Methodologies',
+        experiencias: 'Experience',
+        formacao:     'Education',
+        contato:      'Contact'
+      },
+      hero: {
+        ariaLabel:  'Introduction',
+        eyebrow:    'Engineer · Project Manager · Business Management',
+        headline:   'Measurable results.<br>More efficient operations.',
+        subtitle:   'I turn operational challenges into sustainable growth — combining technical rigor, Lean Six Sigma, and project management to deliver real business impact.',
+        ctaContact: 'Get in Touch',
+        ctaExp:     'View Experience',
+        imgAlt:     'André Fanchini — Management Consultant'
+      },
+      numeros: {
+        ariaLabel:          'Performance indicators',
+        title:              'Results that speak for themselves',
+        subtitle:           'Measurable impact delivered in real projects.',
+        highlightAriaLabel: 'Seven percent increase in EBIT',
+        highlightLabel:     'EBIT at industrial client',
+        highlightDesc:      'Primary result delivered through process restructuring and quality management',
+        tickerAriaLabel:    'Other performance indicators',
+        ticker: [
+          '+50 Structured projects',
+          '+12% OEE at industrial client',
+          '−30% cost of non-quality',
+          '+5 years of market experience',
+          '+15% productivity gain in mapped processes',
+          'ISO 9001 implementation'
+        ]
+      },
+      abordagem: {
+        ariaLabel: 'Working methodology',
+        title:     'How I work',
+        subtitle:  'A structured three-step process to transform operational challenges into sustainable results.',
+        step1: {
+          title: 'Data-driven diagnosis',
+          body:  'Structured data collection, root-cause analysis with Ishikawa and Pareto, and detailed current-state mapping to pinpoint operational gaps with technical precision.'
+        },
+        step2: {
+          title: 'Redesign & Structuring',
+          body:  'Process mapping with BPMN, application of Lean Six Sigma and DMAIC to redesign workflows, eliminate waste, and build efficient management systems.'
+        },
+        step3: {
+          title: 'Sustainable Results',
+          body:  'KPI implementation and indicator governance, team enablement, and dashboards to sustain improvement efficiency and support data-driven decision-making.'
+        }
+      },
+      metodologias: {
+        ariaLabel: 'Methodologies and tools',
+        title:     'Methodologies',
+        subtitle:  'Frameworks and tools applied with technical rigor to drive efficiency and measurable growth.',
+        card1: {
+          title:         'Lean Six Sigma · DMAIC',
+          desc:          'Methodology for reducing variability and eliminating waste in industrial processes, focused on efficiency and quality.',
+          tagsAriaLabel: 'Lean Six Sigma skills',
+          tag5:          'Management'
+        },
+        card2: {
+          title:         'Quality Management',
+          desc:          'Implementation and maintenance of quality management systems focused on compliance, continuous improvement, and regulatory standards.',
+          tagsAriaLabel: 'Quality Management skills',
+          tag1:          'Continuous improvement'
+        },
+        card3: {
+          title:         'Project Management',
+          desc:          'Structuring and executing projects with agile and traditional methodologies, ensuring deliveries within scope, time, and budget.',
+          tagsAriaLabel: 'Project Management skills',
+          tag3:          'Management',
+          tag4:          'Processes'
+        },
+        card4: {
+          title:         'Business Intelligence',
+          desc:          'Transforming operational data into dashboards and strategic reports to support indicator-based decision-making.',
+          tagsAriaLabel: 'Business Intelligence skills',
+          tag1:          'dashboards',
+          tag3:          'balance sheet'
+        }
+      },
+      idiomas: {
+        ariaLabel: 'Languages',
+        title:     'Languages',
+        subtitle:  'Multilingual communication for both domestic and international settings.',
+        lang1: { dotsLabel: 'Level 5 of 5', label: 'Native'  },
+        lang2: { dotsLabel: 'Level 5 of 5', label: 'Fluent'  },
+        lang3: { dotsLabel: 'Level 1 of 5', label: 'Basic'   },
+        lang4: { dotsLabel: 'Level 1 of 5', label: 'Basic'   }
+      },
+      experiencias: {
+        ariaLabel:         'Professional experience',
+        title:             'Experience',
+        subtitle:          'Professional track record focused on results and continuous improvement in industrial and food-sector companies.',
+        timelineAriaLabel: 'Professional timeline',
+        clientsLabel:      'Clients served:',
+        item1: {
+          role:   'Associate Consultant',
+          period: 'Oct 2024 – Apr 2026',
+          body:   'Organizational diagnostics and operational improvement projects with average productivity gains of 15–20%. Process mapping and redesign using Lean Six Sigma and BPMN, management system implementation, KPI governance, and dashboards.'
+        },
+        item2: {
+          role:   'Quality Coordinator',
+          period: 'Apr 2023 – Oct 2024',
+          body:   'Implementation and coordination of the quality management system, definition of material conformity criteria, supplier qualification, and conduct of internal audits. Process controls focused on reducing non-conformances.'
+        },
+        item3: {
+          role:   'Process & Quality Consultant',
+          period: 'Jul 2022 – Dec 2022',
+          body:   'Development of the Good Manufacturing Practices (GMP) manual, standardization of production processes, workflow mapping, and implementation of non-conformance controls at a fermented beverages startup.'
+        },
+        item4: {
+          role:   'Quality Control Intern',
+          period: 'Apr 2021 – Jun 2022',
+          body:   'Support in quality management and development of standard operating procedures at a food-sector company.'
+        }
+      },
+      formacao: {
+        ariaLabel: 'Academic background',
+        title:     'Education',
+        subtitle:  'Solid technical foundation combining engineering, management, and excellence certifications.',
+        card1: { badge: 'MBA',         title: 'Project Management', institution: 'Fundação Getulio Vargas — FGV' },
+        card2: { badge: "Bachelor's",  title: 'Food Engineering',   institution: 'Faculdade de Engenharia Salvador Arena' },
+        card3: { badge: 'Technical',   title: 'Chemical Technology', institution: 'Colégio Anchieta' }
+      },
+      contato: {
+        ariaLabel:         'Contact',
+        title:             "Let's talk?",
+        subtitle:          "I'm available for new projects, partnerships, and challenges. Get in touch and let's build something together.",
+        btnEmail:          'Send Email',
+        btnEmailAriaLabel: 'Send email to André Fanchini',
+        btnCV:             'Download CV',
+        btnCVAriaLabel:    'Download resume as PDF'
+      },
+      footer: {
+        navAriaLabel: 'Footer links',
+        copyright:    '© 2026 André Fanchini. All rights reserved.',
+        linkHome:     'Home',
+        linkCV:       'Resume',
+        linkEmail:    'Email'
+      }
+    }
+  };
+
+  /* ── Resolve chave com pontos: 'hero.ctaContact' → string ── */
+  function resolve(lang, key) {
+    var parts = key.split('.');
+    var val = TRANSLATIONS[lang];
+    for (var i = 0; i < parts.length; i++) {
+      if (val == null) return key;
+      val = val[parts[i]];
+    }
+    return typeof val === 'string' ? val : key;
+  }
+
+  /* ── Reconstrói o ticker traduzido ─────────────────────── */
+  function rebuildTicker(lang) {
+    var track = document.querySelector('.ticker__track');
+    if (!track) return;
+    var items = TRANSLATIONS[lang].numeros.ticker;
+    var sep = '<span class="ticker__separator" aria-hidden="true">◆</span>';
+    var html = '';
+    items.forEach(function (text) {
+      html += '<span class="ticker__item">' + text + '</span>' + sep;
+    });
+    items.forEach(function (text) {
+      html += '<span class="ticker__item" aria-hidden="true">' + text + '</span>' + sep;
+    });
+    var newTrack = track.cloneNode(false);
+    newTrack.innerHTML = html;
+    track.parentNode.replaceChild(newTrack, track);
+  }
+
+  /* ── Aplica idioma a todos os nós data-i18n* ────────────── */
+  function applyLanguage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      el.textContent = resolve(lang, el.getAttribute('data-i18n'));
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      el.innerHTML = resolve(lang, el.getAttribute('data-i18n-html'));
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      el.setAttribute('aria-label', resolve(lang, el.getAttribute('data-i18n-aria')));
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      el.alt = resolve(lang, el.getAttribute('data-i18n-alt'));
+    });
+
+    rebuildTicker(lang);
+
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    document.title = resolve(lang, 'meta.title');
+    var metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', resolve(lang, 'meta.description'));
+
+    document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+      var opts = btn.querySelectorAll('.lang-toggle__option');
+      if (opts.length >= 2) {
+        opts[0].classList.toggle('lang-toggle__option--active', lang === 'pt');
+        opts[1].classList.toggle('lang-toggle__option--active', lang === 'en');
+      }
+      btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+    });
+  }
+
+  /* ── Alterna idioma ─────────────────────────────────────── */
+  function toggle() {
+    var cur  = localStorage.getItem('lang') || 'pt';
+    var next = cur === 'pt' ? 'en' : 'pt';
+    localStorage.setItem('lang', next);
+    applyLanguage(next);
+  }
+
+  /* ── API pública para outros módulos ────────────────────── */
+  window.i18n = {
+    t: function (key) {
+      return resolve(localStorage.getItem('lang') || 'pt', key);
+    }
+  };
+
+  /* ── Init ───────────────────────────────────────────────── */
+  var initialLang = localStorage.getItem('lang') || 'pt';
+  applyLanguage(initialLang);
+
+  document.querySelectorAll('.lang-toggle').forEach(function (btn) {
+    btn.addEventListener('click', toggle);
+  });
+})();
+
+
+/* ============================================================
+   MÓDULO 3 — NAVEGAÇÃO MOBILE (HAMBURGUER)
    Controla abertura/fechamento do menu mobile com:
    - toggle de classes e aria-expanded
    - bloqueio de scroll do body enquanto menu está aberto
    - fechamento ao clicar em qualquer link do menu
    - fechamento com a tecla Escape
+   Usa window.i18n.t() para strings de aria-label localizadas.
    ============================================================ */
 (function mobileNav() {
   var toggle = document.querySelector('.nav__toggle');
@@ -55,14 +461,14 @@
   function openMenu() {
     menu.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
-    toggle.setAttribute('aria-label', 'Fechar menu');
+    toggle.setAttribute('aria-label', window.i18n ? window.i18n.t('nav.closeMenu') : 'Fechar menu');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     menu.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu');
+    toggle.setAttribute('aria-label', window.i18n ? window.i18n.t('nav.openMenu') : 'Abrir menu');
     document.body.style.overflow = '';
   }
 
@@ -98,7 +504,7 @@
 
 
 /* ============================================================
-   MÓDULO 3 — ANIMAÇÕES DE SCROLL (FADE-UP)
+   MÓDULO 4 — ANIMAÇÕES DE SCROLL (FADE-UP)
    Observa elementos e adiciona .is-visible quando entram
    na viewport, criando efeito de fade + slide para cima.
    Respeita a preferência de movimento reduzido do sistema.
@@ -157,7 +563,7 @@
 
 
 /* ============================================================
-   MÓDULO 4 — SCROLL SUAVE COM OFFSET
+   MÓDULO 5 — SCROLL SUAVE COM OFFSET
    Intercepta cliques em links âncora (#) e aplica scroll
    suave com compensação da altura da nav fixa (64px).
    ============================================================ */
