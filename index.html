@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="André Vinicius Fanchini de Azevedo — Engenheiro de Alimentos e Consultor de Gestão. Especialista em Lean Six Sigma, gestão da qualidade e melhoria de processos industriais." />
+  <title>André Vinicius | Consultor de Gestão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilo.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER — Navegação principal
+       ============================================================ -->
+  <header class="header" role="banner">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="#hero" class="nav__brand">André Vinicius</a>
+
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#numeros"      class="nav__link">Números</a></li>
+        <li><a href="#abordagem"    class="nav__link">Abordagem</a></li>
+        <li><a href="#metodologias" class="nav__link">Metodologias</a></li>
+        <li><a href="#experiencias" class="nav__link">Experiências</a></li>
+        <li><a href="#formacao"     class="nav__link">Formação</a></li>
+        <li><a href="#contato"      class="nav__link nav__link--cta">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — Apresentação estratégica
+         ============================================================ -->
+    <section id="hero" class="hero" aria-label="Apresentação">
+      <div class="hero__container container">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">Engenheiro · Gestor de projetos · Gestão Empresarial </p>
+          <h1 class="hero__title">Resultados mensuráveis.<br>Operações mais eficientes.</h1>
+          <p class="hero__subtitle">
+            Transformo desafios operacionais em crescimento sustentável — unindo
+            rigor técnico, Lean Six Sigma e gerenciamento de projetos para gerar
+            impacto real nos resultados do negócio.
+          </p>
+          <div class="hero__cta-group">
+            <a href="mailto:andrevinicius.fanchini@gmail.com" class="btn btn--primary">
+              Entre em Contato
+            </a>
+            <a href="#experiencias" class="btn btn--outline">
+              Ver Experiências
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__image-wrapper">
+          <img
+            src="img/perfil.png"
+            alt="André Vinicius Fanchini — Consultor de Gestão"
+            class="hero__image"
+            width="400"
+            height="400"
+            fetchpriority="high"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NÚMEROS — Indicadores de performance
+         ============================================================ -->
+    <section id="numeros" class="numeros section section--alt" aria-label="Indicadores de performance">
+      <div class="container">
+        <h2 class="section__title">Resultados que falam por si</h2>
+        <p class="section__subtitle">Impacto mensurável entregue em projetos reais com clientes industriais e do setor alimentício.</p>
+
+        <!-- Destaque estático — não animado -->
+        <div class="numeros__highlight">
+          <div class="numeros__highlight-value" aria-label="Sete por cento de aumento no EBIT">+7%</div>
+          <div class="numeros__highlight-text">
+            <span class="numeros__highlight-label">EBIT em cliente com indústria</span>
+            <span class="numeros__highlight-desc">Principal resultado entregue via reestruturação de processos e gestão de qualidade</span>
+          </div>
+        </div>
+
+        <!-- Ticker infinito com outros indicadores -->
+        <div class="ticker" aria-label="Outros indicadores de performance" role="marquee">
+          <div class="ticker__track" aria-hidden="false">
+            <span class="ticker__item">+40 Projetos estruturados</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item">+12% em OEE em cliente industrial</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item">−30% custo não qualidade</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item">+5 anos de experiência de mercado</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item">+15% ganho de produtividade nos processos mapeados</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item">Implantação da ISO 9001</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <!-- Duplicados para loop contínuo -->
+            <span class="ticker__item" aria-hidden="true">+40 Projetos estruturados</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item" aria-hidden="true">+12% em OEE em cliente industrial</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item" aria-hidden="true">−30% custo não qualidade</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item" aria-hidden="true">+5 anos de experiência de mercado</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item" aria-hidden="true">+15% ganho de produtividade nos processos mapeados</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+            <span class="ticker__item" aria-hidden="true">Implantação da ISO 9001</span>
+            <span class="ticker__separator" aria-hidden="true">◆</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABORDAGEM — Como trabalho (3 etapas)
+         ============================================================ -->
+    <section id="abordagem" class="abordagem section" aria-label="Metodologia de trabalho">
+      <div class="container">
+        <h2 class="section__title">Como trabalho</h2>
+        <p class="section__subtitle">Um processo estruturado em três etapas para transformar desafios operacionais em resultados sustentáveis.</p>
+
+        <div class="abordagem__grid">
+
+          <article class="step-card">
+            <div class="step-card__number" aria-hidden="true">01</div>
+            <h3 class="step-card__title">Diagnóstico baseado em dados</h3>
+            <p class="step-card__body">
+              Coleta estruturada de dados, análise de causa-raiz com Ishikawa e Pareto,
+              e mapeamento detalhado do estado atual para identificar gaps operacionais
+              com precisão técnica.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-card__number" aria-hidden="true">02</div>
+            <h3 class="step-card__title">Redesenho e Estruturação</h3>
+            <p class="step-card__body">
+              Mapeamento de processos com BPMN, aplicação de Lean Six Sigma e DMAIC
+              para redesenhar fluxos, eliminar desperdícios e estruturar sistemas de
+              gestão eficientes.
+            </p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-card__number" aria-hidden="true">03</div>
+            <h3 class="step-card__title">Resultados Sustentáveis</h3>
+            <p class="step-card__body">
+              Implementação de KPIs e governança de indicadores, capacitação de equipes
+              e dashboards em Power BI para garantir a perenidade das melhorias e a
+              tomada de decisão orientada a dados.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         METODOLOGIAS — Grid de competências
+         ============================================================ -->
+    <section id="metodologias" class="metodologias section section--alt" aria-label="Metodologias e ferramentas">
+      <div class="container">
+        <h2 class="section__title">Metodologias</h2>
+        <p class="section__subtitle">Frameworks e ferramentas aplicados com rigor técnico para gerar eficiência e crescimento mensurável.</p>
+
+        <div class="metodologias__grid">
+
+          <article class="method-card">
+            <span class="method-card__icon" aria-hidden="true">⚙️</span>
+            <h3 class="method-card__title">Lean Six Sigma · DMAIC</h3>
+            <p class="method-card__desc">
+              Metodologia para redução de variabilidade e eliminação de desperdícios em
+              processos industriais, com foco em eficiência e qualidade.
+            </p>
+            <ul class="method-card__tags" aria-label="Competências em Lean Six Sigma">
+              <li class="tag">Black Belt</li>
+              <li class="tag">DMAIC</li>
+              <li class="tag">Kaizen</li>
+              <li class="tag">VSM</li>
+              <li class="tag">5S</li>
+            </ul>
+          </article>
+
+          <article class="method-card">
+            <span class="method-card__icon" aria-hidden="true">🏆</span>
+            <h3 class="method-card__title">Gestão da Qualidade</h3>
+            <p class="method-card__desc">
+              Implantação e manutenção de sistemas de qualidade com foco em conformidade,
+              melhoria contínua e atendimento às normas regulatórias.
+            </p>
+            <ul class="method-card__tags" aria-label="Competências em Gestão da Qualidade">
+              <li class="tag">ISO 9001</li>
+              <li class="tag">FMEA</li>
+              <li class="tag">Ishikawa</li>
+              <li class="tag">Pareto</li>
+              <li class="tag">CEP</li>
+            </ul>
+          </article>
+
+          <article class="method-card">
+            <span class="method-card__icon" aria-hidden="true">📋</span>
+            <h3 class="method-card__title">Gerenciamento de Projetos</h3>
+            <p class="method-card__desc">
+              Estruturação e execução de projetos com metodologias ágeis e tradicionais,
+              garantindo entregas dentro do escopo, prazo e custo.
+            </p>
+            <ul class="method-card__tags" aria-label="Competências em Gerenciamento de Projetos">
+              <li class="tag">PMBoK</li>
+              <li class="tag">Scrum</li>
+              <li class="tag">Kanban</li>
+              <li class="tag">BPMN</li>
+              <li class="tag">EAP</li>
+            </ul>
+          </article>
+
+          <article class="method-card">
+            <span class="method-card__icon" aria-hidden="true">📊</span>
+            <h3 class="method-card__title">Business Intelligence</h3>
+            <p class="method-card__desc">
+              Transformação de dados operacionais em dashboards e relatórios estratégicos
+              para apoiar a tomada de decisão baseada em indicadores.
+            </p>
+            <ul class="method-card__tags" aria-label="Competências em Business Intelligence">
+              <li class="tag">Power BI</li>
+              <li class="tag">OEE</li>
+              <li class="tag">EBIT</li>
+              <li class="tag">KPIs</li>
+              <li class="tag">Excel</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIÊNCIAS — Timeline profissional
+         ============================================================ -->
+    <section id="experiencias" class="experiencias section" aria-label="Experiência profissional">
+      <div class="container">
+        <h2 class="section__title">Experiências</h2>
+        <p class="section__subtitle">Trajetória profissional com foco em resultados e melhoria contínua em empresas do setor industrial e alimentício.</p>
+
+        <ol class="timeline" aria-label="Linha do tempo profissional">
+
+          <!-- 1. Aquila Consultoria -->
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="timeline__card">
+              <header class="timeline__card-header">
+                <img
+                  src="img/clientes/aquila.png"
+                  alt="Aquila Consultoria em Gestão"
+                  class="timeline__logo"
+                  loading="lazy"
+                  width="120"
+                  height="48"
+                />
+                <div class="timeline__meta">
+                  <h3 class="timeline__role">Consultor Associado</h3>
+                  <p class="timeline__company">Aquila Consultoria em Gestão</p>
+                  <time class="timeline__period" datetime="2024-10/2026-04">Out 2024 – Abr 2026</time>
+                </div>
+              </header>
+              <div class="timeline__body">
+                <p>
+                  Projetos de diagnóstico organizacional e melhoria operacional com ganhos médios de 15–20%
+                  de produtividade. Mapeamento e redesenho de processos com Lean Six Sigma e BPMN,
+                  implantação de sistemas de gestão, governança de KPIs e dashboards.
+                </p>
+                <div class="timeline__clients" aria-label="Clientes atendidos como consultor Aquila">
+                  <span class="timeline__clients-label">Clientes atendidos:</span>
+                  <div class="timeline__clients-logos">
+                    <img
+                      src="img/clientes/karina.png"
+                      alt="Karina"
+                      class="timeline__client-logo"
+                      loading="lazy"
+                    />
+                    <img
+                      src="img/clientes/guaxupe.png"
+                      alt="Guaxupé"
+                      class="timeline__client-logo"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- 2. Debken -->
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="timeline__card">
+              <header class="timeline__card-header">
+                <img
+                  src="img/clientes/debken.png"
+                  alt="Debken Indústria e Comércio de Plásticos"
+                  class="timeline__logo"
+                  loading="lazy"
+                  width="120"
+                  height="48"
+                />
+                <div class="timeline__meta">
+                  <h3 class="timeline__role">Coordenador de Qualidade</h3>
+                  <p class="timeline__company">Debken Indústria e Comércio de Plásticos</p>
+                  <time class="timeline__period" datetime="2023-04/2024-10">Abr 2023 – Out 2024</time>
+                </div>
+              </header>
+              <div class="timeline__body">
+                <p>
+                  Implantação e coordenação do sistema de gestão da qualidade, definição de critérios
+                  de conformidade de materiais, qualificação de fornecedores e condução de auditorias
+                  internas. Controles de processo com foco em redução de não conformidades.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- 3. Soh Kombucha -->
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="timeline__card">
+              <header class="timeline__card-header">
+                <img
+                  src="img/clientes/soh_kombucha.png"
+                  alt="Soh Kombucha"
+                  class="timeline__logo"
+                  loading="lazy"
+                  width="120"
+                  height="48"
+                />
+                <div class="timeline__meta">
+                  <h3 class="timeline__role">Consultor de Processos e Qualidade</h3>
+                  <p class="timeline__company">Soh Kombucha</p>
+                  <time class="timeline__period" datetime="2022-07/2022-12">Jul 2022 – Dez 2022</time>
+                </div>
+              </header>
+              <div class="timeline__body">
+                <p>
+                  Estruturação do Manual de Boas Práticas de Fabricação (BPF), padronização de
+                  processos produtivos, mapeamento de fluxos e implantação de controles de
+                  não conformidades em startup do setor de bebidas fermentadas.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- 4. Legurmê -->
+          <li class="timeline__item">
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <article class="timeline__card">
+              <header class="timeline__card-header">
+                <div class="timeline__logo-placeholder" aria-hidden="true">L</div>
+                <div class="timeline__meta">
+                  <h3 class="timeline__role">Estagiário de Controle de Qualidade</h3>
+                  <p class="timeline__company">Legurmê</p>
+                  <time class="timeline__period" datetime="2021-04/2022-06">Abr 2021 – Jun 2022</time>
+                </div>
+              </header>
+              <div class="timeline__body">
+                <p>
+                  Suporte na gestão da qualidade e desenvolvimento de procedimentos operacionais
+                  padrão em empresa do setor alimentício.
+                </p>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FORMAÇÃO — Educação acadêmica
+         ============================================================ -->
+    <section id="formacao" class="formacao section section--alt" aria-label="Formação acadêmica">
+      <div class="container">
+        <h2 class="section__title">Formação</h2>
+        <p class="section__subtitle">Base técnica sólida combinando engenharia, gestão e certificações de excelência.</p>
+
+        <div class="formacao__grid">
+
+          <article class="edu-card">
+            <div class="edu-card__icon" aria-hidden="true">🎓</div>
+            <div class="edu-card__content">
+              <span class="edu-card__badge">MBA</span>
+              <h3 class="edu-card__title">Gestão de Projetos</h3>
+              <p class="edu-card__institution">Fundação Getulio Vargas — FGV</p>
+              <time class="edu-card__period" datetime="2024/2025">2024 – 2025</time>
+            </div>
+          </article>
+
+          <article class="edu-card">
+            <div class="edu-card__icon" aria-hidden="true">🔬</div>
+            <div class="edu-card__content">
+              <span class="edu-card__badge">Graduação</span>
+              <h3 class="edu-card__title">Engenharia de Alimentos</h3>
+              <p class="edu-card__institution">Faculdade de Engenharia Salvador Arena</p>
+              <time class="edu-card__period" datetime="2017/2022">2017 – 2022</time>
+            </div>
+          </article>
+
+          <article class="edu-card">
+            <div class="edu-card__icon" aria-hidden="true">⚗️</div>
+            <div class="edu-card__content">
+              <span class="edu-card__badge">Técnico</span>
+              <h3 class="edu-card__title">Técnico em Química</h3>
+              <p class="edu-card__institution">Colégio Anchieta</p>
+              <time class="edu-card__period" datetime="2014/2017">2014 – 2017</time>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTATO — CTA final
+         ============================================================ -->
+    <section id="contato" class="contato section" aria-label="Contato">
+      <div class="container contato__container">
+        <h2 class="section__title contato__title">Vamos conversar?</h2>
+        <p class="contato__subtitle">
+          Estou disponível para novos projetos, parcerias e desafios.
+          Entre em contato e vamos estruturar algo juntos.
+        </p>
+        <div class="contato__actions">
+          <a
+            href="mailto:andrevinicius.fanchini@gmail.com"
+            class="btn btn--primary btn--lg"
+            aria-label="Enviar e-mail para André Vinicius"
+          >
+            Enviar E-mail
+          </a>
+          <a
+            href="resource/cv.pdf"
+            class="btn btn--outline btn--lg"
+            download
+            aria-label="Baixar currículo em PDF"
+          >
+            Baixar CV
+          </a>
+        </div>
+        <address class="contato__address">
+          <a href="mailto:andrevinicius.fanchini@gmail.com" class="contato__email">
+            andrevinicius.fanchini@gmail.com
+          </a>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__copy">© 2026 André Vinicius Fanchini. Todos os direitos reservados.</p>
+      <nav class="footer__nav" aria-label="Links do rodapé">
+        <a href="#hero"                                     class="footer__link">Início</a>
+        <a href="resource/cv.pdf"                           class="footer__link" download>Currículo</a>
+        <a href="mailto:andrevinicius.fanchini@gmail.com"   class="footer__link">E-mail</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
