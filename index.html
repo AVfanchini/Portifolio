@@ -6,7 +6,7 @@
 
   <!-- SEO Básico -->
   <title>André Fanchini | Consultor de Gestão &amp; Especialista Six Sigma</title>
-  <meta name="description" content="André Vinicius Fanchini de Azevedo — Engenheiro, Gestor de Projetos. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos." />
+  <meta name="description" content="André Vinicius Fanchini de Azevedo — Engenheiro, Gestor de Projetos e Empresas. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos." />
   <meta name="keywords" content="André Fanchini, André Vinicius Fanchini, André Vinicius Fanchini de Azevedo, Consultor de Gestão, Engenheiro, Gestor de Projetos, Gestor de Empresas, Especialista Six Sigma, Lean Six Sigma, Gestão da Qualidade, Melhoria Contínua de Processos, DMAIC, ISO 9001, Business Intelligence, Engenheiro de Alimentos" />
   <meta name="author" content="André Vinicius Fanchini de Azevedo" />
   <meta name="robots" content="index, follow" />
@@ -20,7 +20,7 @@
   <!-- Open Graph — Facebook, LinkedIn, WhatsApp -->
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="André Fanchini | Gestor de projetos &amp; Especialista Six Sigma" />
-  <meta property="og:description" content="Engenheiro, Gestor de Projetos. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos." />
+  <meta property="og:description" content="Engenheiro e Gestor de Projetos. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua." />
   <meta property="og:url" content="https://avfanchini.github.io/Portifolio/" />
   <meta property="og:image" content="img/perfil.png" />
   <meta property="og:image:alt" content="André Vinicius Fanchini de Azevedo" />
@@ -29,8 +29,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="André Fanchini | Consultor de Gestão &amp; Especialista Six Sigma" />
-  <meta name="twitter:description" content="Engenheiro, Gestor de Projetos e Empresas. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos." />
+  <meta name="twitter:title" content="André Fanchini | Gestor de projetos &amp; Especialista Six Sigma" />
+  <meta name="twitter:description" content="Engenheiro e Gestor de Projetos. Especialista em Lean Six Sigma, Gestão da Qualidade e Melhoria Contínua de Processos." />
   <meta name="twitter:image" content="img/perfil.png" />
 
   <!-- Dados Estruturados JSON-LD (Schema.org) -->
@@ -84,20 +84,18 @@
         André Fanchini
       </a>
 
-      <button type="button" class="lang-toggle lang-toggle--desktop"
-              aria-label="Alternar para inglês"
-              data-i18n-aria="nav.langToggle"
-              aria-pressed="false">
-        <span class="lang-toggle__option lang-toggle__option--active" aria-hidden="true">PT</span>
-        <span class="lang-toggle__divider" aria-hidden="true">|</span>
-        <span class="lang-toggle__option" aria-hidden="true">EN</span>
-      </button>
-
-      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="nav.openMenu">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-      </button>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Alternar para inglês" data-i18n-aria="nav.langToggle">
+          <span class="lang-toggle__option lang-toggle__option--active">PT</span>
+          <span class="lang-toggle__divider">/</span>
+          <span class="lang-toggle__option">EN</span>
+        </button>
+        <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu" data-i18n-aria="nav.openMenu">
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+          <span class="nav__toggle-bar"></span>
+        </button>
+      </div>
 
       <ul class="nav__menu" id="nav-menu" role="list">
         <li><a href="#numeros"      class="nav__link" data-i18n="nav.numeros">Números</a></li>
@@ -106,16 +104,6 @@
         <li><a href="#experiencias" class="nav__link" data-i18n="nav.experiencias">Experiências</a></li>
         <li><a href="#formacao"     class="nav__link" data-i18n="nav.formacao">Formação</a></li>
         <li><a href="#contato"      class="nav__link nav__link--cta" data-i18n="nav.contato">Contato</a></li>
-        <li class="nav__lang-item">
-          <button type="button" class="lang-toggle lang-toggle--mobile"
-                  aria-label="Alternar para inglês"
-                  data-i18n-aria="nav.langToggle"
-                  aria-pressed="false">
-            <span class="lang-toggle__option lang-toggle__option--active" aria-hidden="true">PT</span>
-            <span class="lang-toggle__divider" aria-hidden="true">|</span>
-            <span class="lang-toggle__option" aria-hidden="true">EN</span>
-          </button>
-        </li>
       </ul>
     </nav>
   </header>
@@ -150,11 +138,11 @@
           <img
             src="img/perfil.png"
             alt="André Fanchini — Consultor de Gestão"
-            data-i18n-alt="hero.imgAlt"
             class="hero__image"
             width="400"
             height="400"
             fetchpriority="high"
+            data-i18n-alt="hero.imgAlt"
           />
         </div>
 
@@ -178,7 +166,7 @@
           </div>
         </div>
 
-        <!-- Ticker infinito com outros indicadores — reconstruído pelo JS i18n -->
+        <!-- Ticker infinito com outros indicadores -->
         <div class="ticker" aria-label="Outros indicadores de performance" role="marquee" data-i18n-aria="numeros.tickerAriaLabel">
           <div class="ticker__track" aria-hidden="false">
             <span class="ticker__item">+50 Projetos estruturados</span>
@@ -194,7 +182,7 @@
             <span class="ticker__item">Implantação da ISO 9001</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
             <!-- Duplicados para loop contínuo -->
-            <span class="ticker__item" aria-hidden="true">+50 Projetos estruturados</span>
+            <span class="ticker__item" aria-hidden="true">+40 Projetos estruturados</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
             <span class="ticker__item" aria-hidden="true">+12% em OEE em cliente industrial</span>
             <span class="ticker__separator" aria-hidden="true">◆</span>
@@ -360,21 +348,21 @@
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
-              <span class="lang-dot lang-dot--filled"></span>
+              <span class="lang-dot"></span>
             </div>
             <span class="lang-card__label" data-i18n="idiomas.lang2.label">Fluente</span>
           </div>
 
           <div class="lang-card">
             <span class="lang-card__name">Espanhol</span>
-            <div class="lang-card__dots" aria-label="Nível 1 de 5" data-i18n-aria="idiomas.lang3.dotsLabel">
+            <div class="lang-card__dots" aria-label="Nível 2 de 5" data-i18n-aria="idiomas.lang3.dotsLabel">
+              <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot lang-dot--filled"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
               <span class="lang-dot"></span>
-              <span class="lang-dot"></span>
             </div>
-            <span class="lang-card__label" data-i18n="idiomas.lang3.label">Básico</span>
+            <span class="lang-card__label" data-i18n="idiomas.lang3.label">Intermediário</span>
           </div>
 
           <div class="lang-card">
@@ -408,42 +396,55 @@
             <div class="timeline__marker" aria-hidden="true"></div>
             <article class="timeline__card">
               <header class="timeline__card-header">
-                <img
-                  src="img/clientes/aquila.png"
-                  alt="Aquila Consultoria em Gestão"
-                  class="timeline__logo"
-                  loading="lazy"
-                  width="120"
-                  height="48"
-                />
+                <img src="img/clientes/aquila.png" alt="Aquila Consultoria em Gestão" class="timeline__logo" loading="lazy" width="120" height="48" />
                 <div class="timeline__meta">
                   <h3 class="timeline__role" data-i18n="experiencias.item1.role">Consultor Associado</h3>
                   <p class="timeline__company">Aquila Consultoria em Gestão</p>
                   <time class="timeline__period" datetime="2024-10/2026-04" data-i18n="experiencias.item1.period">Out 2024 – Abr 2026</time>
                 </div>
               </header>
-              <div class="timeline__body">
-                <p data-i18n="experiencias.item1.body">
-                  Projetos de diagnóstico organizacional e melhoria operacional com ganhos médios de 15–20%
-                  de produtividade. Mapeamento e redesenho de processos com Lean Six Sigma e BPMN,
-                  implantação de sistemas de gestão, governança de KPIs e dashboards.
-                </p>
+              <div class="timeline__summary">
+                <p data-i18n="experiencias.item1.body">Atuação como consultor em projetos organizacionais e de melhoria contínua, com foco no aumento de produtividade e eficiência em entrega. Condução de mapeamento e redesenho de processos utilizando Lean Six Sigma e BPMN, além de implementação de rotinas de gestão, KPIs e dashboards. Estruturação de múltiplos projetos com os clientes, com ganhos relevantes em OEE, redução de tempo e melhoria logística — resultando em geração direta no resultado financeiro dos clientes.</p>
                 <div class="timeline__clients" aria-label="Clientes atendidos como consultor Aquila">
                   <span class="timeline__clients-label" data-i18n="experiencias.clientsLabel">Clientes atendidos:</span>
                   <div class="timeline__clients-logos">
-                    <img
-                      src="img/clientes/karina.png"
-                      alt="Karina"
-                      class="timeline__client-logo"
-                      loading="lazy"
-                    />
-                    <img
-                      src="img/clientes/guaxupe.png"
-                      alt="Guaxupé"
-                      class="timeline__client-logo"
-                      loading="lazy"
-                    />
+                    <img src="img/clientes/karina.png" alt="Karina" class="timeline__client-logo" loading="lazy" />
+                    <img src="img/clientes/guaxupe.png" alt="Guaxupé" class="timeline__client-logo" loading="lazy" />
                   </div>
+                </div>
+              </div>
+              <button class="timeline__toggle" aria-expanded="false" aria-controls="details-aquila">
+                <span class="timeline__toggle-more" data-i18n="experiencias.saibaMais">Saiba Mais</span>
+                <span class="timeline__toggle-less" data-i18n="experiencias.saibaMenos">Saiba Menos</span>
+                <svg class="timeline__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="timeline__details" id="details-aquila" hidden>
+                <div class="timeline__project">
+                  <div class="timeline__project-header">
+                    <img src="img/clientes/karina.png" alt="Karina Plásticos" class="timeline__project-logo" loading="lazy" />
+                    <h4 class="timeline__project-name" data-i18n="experiencias.item1.project1.name">Karina Plásticos</h4>
+                  </div>
+                  <ul class="timeline__project-list">
+                    <li data-i18n="experiencias.item1.project1.li1">Redução de 15% no tempo de setup via classificação de máquinas por família de produto e SMED (Troca Rápida de Ferramental)</li>
+                    <li data-i18n="experiencias.item1.project1.li2">Aumento de 12% no OEE e redução de 15–20% no tempo de máquina parada com implantação de sala de controle e apontamentos em tempo real</li>
+                    <li data-i18n="experiencias.item1.project1.li3">Geração de +7% de EBIT por meio do conjunto de ações implementadas</li>
+                    <li data-i18n="experiencias.item1.project1.li4">Redução de 6% no tempo de abastecimento de matéria-prima após redesenho do fluxo logístico e sequenciamento de setup</li>
+                    <li data-i18n="experiencias.item1.project1.li5">Ganhos de 15–20% de produtividade nos processos mapeados com Lean Six Sigma DMAIC e BPMN</li>
+                  </ul>
+                </div>
+                <div class="timeline__project">
+                  <div class="timeline__project-header">
+                    <img src="img/clientes/guaxupe.png" alt="Prefeitura de Guaxupé" class="timeline__project-logo" loading="lazy" />
+                    <h4 class="timeline__project-name" data-i18n="experiencias.item1.project2.name">Prefeitura de Guaxupé</h4>
+                  </div>
+                  <ul class="timeline__project-list">
+                    <li data-i18n="experiencias.item1.project2.li1">Estruturação de 50+ projetos municipais com escopo, cronograma, gestão de riscos e custos (PMBoK)</li>
+                    <li data-i18n="experiencias.item1.project2.li2">Desenvolvimento de plano de voo e plataforma visual de acompanhamento de projetos</li>
+                    <li data-i18n="experiencias.item1.project2.li3">Facilitação de workshops com stakeholders de múltiplas secretarias para alinhamento de escopo</li>
+                    <li data-i18n="experiencias.item1.project2.li4">Dashboards em Power BI e análises quantitativas para tomada de decisão orientada a dados</li>
+                    <li data-i18n="experiencias.item1.project2.li5">Implantação de gestão à vista, rituais de governança e planos de ação (5W2H, PDCA)</li>
+                    <li data-i18n="experiencias.item1.project2.li6">Mapeamento e redesenho de processos com BPMN (Bizagi Modeler)</li>
+                  </ul>
                 </div>
               </div>
             </article>
@@ -454,26 +455,30 @@
             <div class="timeline__marker" aria-hidden="true"></div>
             <article class="timeline__card">
               <header class="timeline__card-header">
-                <img
-                  src="img/clientes/debken.png"
-                  alt="Debken Indústria e Comércio de Plásticos"
-                  class="timeline__logo"
-                  loading="lazy"
-                  width="120"
-                  height="48"
-                />
+                <img src="img/clientes/debken.png" alt="Debken Indústria e Comércio de Plásticos" class="timeline__logo" loading="lazy" width="120" height="48" />
                 <div class="timeline__meta">
                   <h3 class="timeline__role" data-i18n="experiencias.item2.role">Coordenador de Qualidade</h3>
                   <p class="timeline__company">Debken Indústria e Comércio de Plásticos</p>
                   <time class="timeline__period" datetime="2023-04/2024-10" data-i18n="experiencias.item2.period">Abr 2023 – Out 2024</time>
                 </div>
               </header>
-              <div class="timeline__body">
-                <p data-i18n="experiencias.item2.body">
-                  Implantação e coordenação do sistema de gestão da qualidade, definição de critérios
-                  de conformidade de materiais, qualificação de fornecedores e condução de auditorias
-                  internas. Controles de processo com foco em redução de não conformidades.
-                </p>
+              <div class="timeline__summary">
+                <p data-i18n="experiencias.item2.body">Responsável pela estruturação e coordenação do sistema de gestão da qualidade em ambiente industrial. Atuação na implementação da ISO 9001, definição de critérios de conformidade, qualificação de fornecedores e condução de auditorias internas e externas. Liderança de iniciativas que reduziram significativamente os custos de não qualidade, além da implantação de controle de processos, rastreabilidade e indicadores de desempenho.</p>
+              </div>
+              <button class="timeline__toggle" aria-expanded="false" aria-controls="details-debken">
+                <span class="timeline__toggle-more" data-i18n="experiencias.saibaMais">Saiba Mais</span>
+                <span class="timeline__toggle-less" data-i18n="experiencias.saibaMenos">Saiba Menos</span>
+                <svg class="timeline__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="timeline__details" id="details-debken" hidden>
+                <ul class="timeline__detail-list">
+                  <li data-i18n="experiencias.item2.li1">Redução de ~30% nos custos de não qualidade via projeto de reaproveitamento de material por moagem</li>
+                  <li data-i18n="experiencias.item2.li2">Estruturação completa do SGQ em indústria de transformação plástica com certificação ISO 9001 e implantação de boas práticas FSC 22000</li>
+                  <li data-i18n="experiencias.item2.li3">Implantação de laboratório de controle dimensional tridimensional, viabilizando atendimento a clientes de alta exigência técnica (Colgate, EPL)</li>
+                  <li data-i18n="experiencias.item2.li4">Implantação de sala limpa com ambiente controlado para produção dedicada a clientes com requisitos especiais</li>
+                  <li data-i18n="experiencias.item2.li5">Condução de auditorias internas e externas; qualificação de fornecedores com visitas in loco</li>
+                  <li data-i18n="experiencias.item2.li6">Estruturação de sistema de dados de qualidade: indicadores, RNC/CAPA, rastreabilidade e controles de processo</li>
+                </ul>
               </div>
             </article>
           </li>
@@ -483,26 +488,28 @@
             <div class="timeline__marker" aria-hidden="true"></div>
             <article class="timeline__card">
               <header class="timeline__card-header">
-                <img
-                  src="img/clientes/soh_kombucha.png"
-                  alt="Soh Kombucha"
-                  class="timeline__logo"
-                  loading="lazy"
-                  width="120"
-                  height="48"
-                />
+                <img src="img/clientes/soh_kombucha.png" alt="Soh Kombucha" class="timeline__logo" loading="lazy" width="120" height="48" />
                 <div class="timeline__meta">
                   <h3 class="timeline__role" data-i18n="experiencias.item3.role">Consultor de Processos e Qualidade</h3>
                   <p class="timeline__company">Soh Kombucha</p>
                   <time class="timeline__period" datetime="2022-07/2022-12" data-i18n="experiencias.item3.period">Jul 2022 – Dez 2022</time>
                 </div>
               </header>
-              <div class="timeline__body">
-                <p data-i18n="experiencias.item3.body">
-                  Estruturação do Manual de Boas Práticas de Fabricação (BPF), padronização de
-                  processos produtivos, mapeamento de fluxos e implantação de controles de
-                  não conformidades em startup do setor de bebidas fermentadas.
-                </p>
+              <div class="timeline__summary">
+                <p data-i18n="experiencias.item3.body">Estruturação completa do SGQ em startup do setor alimentício. Desenvolvimento de documentação técnica (BPF, POPs), padronização de processos produtivos e organização do fluxo operacional. Apoio à certificação e aumento da eficiência produtiva por meio de melhorias de processo.</p>
+              </div>
+              <button class="timeline__toggle" aria-expanded="false" aria-controls="details-soh">
+                <span class="timeline__toggle-more" data-i18n="experiencias.saibaMais">Saiba Mais</span>
+                <span class="timeline__toggle-less" data-i18n="experiencias.saibaMenos">Saiba Menos</span>
+                <svg class="timeline__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="timeline__details" id="details-soh" hidden>
+                <ul class="timeline__detail-list">
+                  <li data-i18n="experiencias.item3.li1">Estruturação do SGQ do zero: Manual de BPF, POPs de produção, fichas técnicas e controle de não conformidades</li>
+                  <li data-i18n="experiencias.item3.li2">Redesenho do layout e fluxo da cozinha industrial, aumentando eficiência e padronização do processo produtivo</li>
+                  <li data-i18n="experiencias.item3.li3">Obtenção da certificação ISO 9001 — primeira certificação da empresa, viabilizando acesso a novos canais de distribuição</li>
+                  <li data-i18n="experiencias.item3.li4">Apoio à automação de rotinas administrativas e ao processo de faturamento, reduzindo retrabalho operacional</li>
+                </ul>
               </div>
             </article>
           </li>
@@ -519,11 +526,20 @@
                   <time class="timeline__period" datetime="2021-04/2022-06" data-i18n="experiencias.item4.period">Abr 2021 – Jun 2022</time>
                 </div>
               </header>
-              <div class="timeline__body">
-                <p data-i18n="experiencias.item4.body">
-                  Suporte na gestão da qualidade e desenvolvimento de procedimentos operacionais
-                  padrão em empresa do setor alimentício.
-                </p>
+              <div class="timeline__summary">
+                <p data-i18n="experiencias.item4.body">Atuação no suporte ao controle de processos produtivos e garantia de conformidade. Participação em análises laboratoriais, aplicação de boas práticas de fabricação e desenvolvimento de procedimentos operacionais.</p>
+              </div>
+              <button class="timeline__toggle" aria-expanded="false" aria-controls="details-legurme">
+                <span class="timeline__toggle-more" data-i18n="experiencias.saibaMais">Saiba Mais</span>
+                <span class="timeline__toggle-less" data-i18n="experiencias.saibaMenos">Saiba Menos</span>
+                <svg class="timeline__toggle-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="timeline__details" id="details-legurme" hidden>
+                <ul class="timeline__detail-list">
+                  <li data-i18n="experiencias.item4.li1">Execução de análises laboratoriais de produtos orgânicos (molhos, antepastos, condimentos) ao longo do processo produtivo</li>
+                  <li data-i18n="experiencias.item4.li2">Verificação de conformidade com BPF, checklists de controle de produção e avaliações de limpeza pós-produção</li>
+                  <li data-i18n="experiencias.item4.li3">Apoio ao desenvolvimento de procedimentos operacionais e fichas técnicas durante período de reestruturação operacional</li>
+                </ul>
               </div>
             </article>
           </li>

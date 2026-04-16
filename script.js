@@ -146,10 +146,10 @@
         ariaLabel: 'Idiomas',
         title:     'Idiomas',
         subtitle:  'Comunicação em múltiplos idiomas para atuação em contextos nacionais e internacionais.',
-        lang1: { dotsLabel: 'Nível 5 de 5', label: 'Nativo'  },
-        lang2: { dotsLabel: 'Nível 5 de 5', label: 'Fluente' },
-        lang3: { dotsLabel: 'Nível 1 de 5', label: 'Básico'  },
-        lang4: { dotsLabel: 'Nível 1 de 5', label: 'Básico'  }
+        lang1: { dotsLabel: 'Nível 5 de 5', label: 'Nativo'        },
+        lang2: { dotsLabel: 'Nível 5 de 5', label: 'Fluente'       },
+        lang3: { dotsLabel: 'Nível 2 de 5', label: 'Intermediário' },
+        lang4: { dotsLabel: 'Nível 1 de 5', label: 'Básico'        }
       },
       experiencias: {
         ariaLabel:         'Experiência profissional',
@@ -157,25 +157,57 @@
         subtitle:          'Trajetória profissional com foco em resultados e melhoria contínua em empresas do setor industrial e alimentício.',
         timelineAriaLabel: 'Linha do tempo profissional',
         clientsLabel:      'Clientes atendidos:',
+        saibaMais:         'Saiba Mais',
+        saibaMenos:        'Saiba Menos',
         item1: {
           role:   'Consultor Associado',
           period: 'Out 2024 – Abr 2026',
-          body:   'Projetos de diagnóstico organizacional e melhoria operacional com ganhos médios de 15–20% de produtividade. Mapeamento e redesenho de processos com Lean Six Sigma e BPMN, implantação de sistemas de gestão, governança de KPIs e dashboards.'
+          body:   'Atuação como consultor em projetos organizacionais e de melhoria contínua, com foco no aumento de produtividade e eficiência em entrega. Condução de mapeamento e redesenho de processos utilizando Lean Six Sigma e BPMN, além de implementação de rotinas de gestão, KPIs e dashboards. Estruturação de múltiplos projetos com os clientes, com ganhos relevantes em OEE, redução de tempo e melhoria logística — resultando em geração direta no resultado financeiro dos clientes.',
+          project1: {
+            name: 'Karina Plásticos',
+            li1:  'Redução de 15% no tempo de setup via classificação de máquinas por família de produto e SMED (Troca Rápida de Ferramental)',
+            li2:  'Aumento de 12% no OEE e redução de 15–20% no tempo de máquina parada com implantação de sala de controle e apontamentos em tempo real',
+            li3:  'Geração de +7% de EBIT por meio do conjunto de ações implementadas',
+            li4:  'Redução de 6% no tempo de abastecimento de matéria-prima após redesenho do fluxo logístico e sequenciamento de setup',
+            li5:  'Ganhos de 15–20% de produtividade nos processos mapeados com Lean Six Sigma DMAIC e BPMN'
+          },
+          project2: {
+            name: 'Prefeitura de Guaxupé',
+            li1:  'Estruturação de 50+ projetos municipais com escopo, cronograma, gestão de riscos e custos (PMBoK)',
+            li2:  'Desenvolvimento de plano de voo e plataforma visual de acompanhamento de projetos',
+            li3:  'Facilitação de workshops com stakeholders de múltiplas secretarias para alinhamento de escopo',
+            li4:  'Dashboards em Power BI e análises quantitativas para tomada de decisão orientada a dados',
+            li5:  'Implantação de gestão à vista, rituais de governança e planos de ação (5W2H, PDCA)',
+            li6:  'Mapeamento e redesenho de processos com BPMN (Bizagi Modeler)'
+          }
         },
         item2: {
           role:   'Coordenador de Qualidade',
           period: 'Abr 2023 – Out 2024',
-          body:   'Implantação e coordenação do sistema de gestão da qualidade, definição de critérios de conformidade de materiais, qualificação de fornecedores e condução de auditorias internas. Controles de processo com foco em redução de não conformidades.'
+          body:   'Responsável pela estruturação e coordenação do sistema de gestão da qualidade em ambiente industrial. Atuação na implementação da ISO 9001, definição de critérios de conformidade, qualificação de fornecedores e condução de auditorias internas e externas. Liderança de iniciativas que reduziram significativamente os custos de não qualidade, além da implantação de controle de processos, rastreabilidade e indicadores de desempenho.',
+          li1:    'Redução de ~30% nos custos de não qualidade via projeto de reaproveitamento de material por moagem',
+          li2:    'Estruturação completa do SGQ em indústria de transformação plástica com certificação ISO 9001 e implantação de boas práticas FSC 22000',
+          li3:    'Implantação de laboratório de controle dimensional tridimensional, viabilizando atendimento a clientes de alta exigência técnica (Colgate, EPL)',
+          li4:    'Implantação de sala limpa com ambiente controlado para produção dedicada a clientes com requisitos especiais',
+          li5:    'Condução de auditorias internas e externas; qualificação de fornecedores com visitas in loco',
+          li6:    'Estruturação de sistema de dados de qualidade: indicadores, RNC/CAPA, rastreabilidade e controles de processo'
         },
         item3: {
           role:   'Consultor de Processos e Qualidade',
           period: 'Jul 2022 – Dez 2022',
-          body:   'Estruturação do Manual de Boas Práticas de Fabricação (BPF), padronização de processos produtivos, mapeamento de fluxos e implantação de controles de não conformidades em startup do setor de bebidas fermentadas.'
+          body:   'Estruturação completa do SGQ em startup do setor alimentício. Desenvolvimento de documentação técnica (BPF, POPs), padronização de processos produtivos e organização do fluxo operacional. Apoio à certificação e aumento da eficiência produtiva por meio de melhorias de processo.',
+          li1:    'Estruturação do SGQ do zero: Manual de BPF, POPs de produção, fichas técnicas e controle de não conformidades',
+          li2:    'Redesenho do layout e fluxo da cozinha industrial, aumentando eficiência e padronização do processo produtivo',
+          li3:    'Obtenção da certificação ISO 9001 — primeira certificação da empresa, viabilizando acesso a novos canais de distribuição',
+          li4:    'Apoio à automação de rotinas administrativas e ao processo de faturamento, reduzindo retrabalho operacional'
         },
         item4: {
           role:   'Estagiário de Controle de Qualidade',
           period: 'Abr 2021 – Jun 2022',
-          body:   'Suporte na gestão da qualidade e desenvolvimento de procedimentos operacionais padrão em empresa do setor alimentício.'
+          body:   'Atuação no suporte ao controle de processos produtivos e garantia de conformidade. Participação em análises laboratoriais, aplicação de boas práticas de fabricação e desenvolvimento de procedimentos operacionais.',
+          li1:    'Execução de análises laboratoriais de produtos orgânicos (molhos, antepastos, condimentos) ao longo do processo produtivo',
+          li2:    'Verificação de conformidade com BPF, checklists de controle de produção e avaliações de limpeza pós-produção',
+          li3:    'Apoio ao desenvolvimento de procedimentos operacionais e fichas técnicas durante período de reestruturação operacional'
         }
       },
       formacao: {
@@ -310,25 +342,57 @@
         subtitle:          'Professional track record focused on results and continuous improvement in industrial and food-sector companies.',
         timelineAriaLabel: 'Professional timeline',
         clientsLabel:      'Clients served:',
+        saibaMais:         'Learn More',
+        saibaMenos:        'Show Less',
         item1: {
           role:   'Associate Consultant',
           period: 'Oct 2024 – Apr 2026',
-          body:   'Organizational diagnostics and operational improvement projects with average productivity gains of 15–20%. Process mapping and redesign using Lean Six Sigma and BPMN, management system implementation, KPI governance, and dashboards.'
+          body:   'Consulting on organizational and continuous improvement projects focused on increasing productivity and delivery efficiency. Process mapping and redesign using Lean Six Sigma and BPMN, combined with implementation of management routines, KPIs, and dashboards. Structured multiple client projects with relevant gains in OEE, time reduction, and logistics improvement — directly impacting client financial results.',
+          project1: {
+            name: 'Karina Plastics',
+            li1:  '15% reduction in setup time through machine classification by product family and SMED (Single-Minute Exchange of Dies)',
+            li2:  '12% OEE increase and 15–20% reduction in total machine downtime via real-time control room and KPI governance',
+            li3:  '+7% EBIT gain generated by the full set of implemented actions',
+            li4:  '6% reduction in raw-material replenishment time after logistics flow redesign and setup sequencing',
+            li5:  '15–20% productivity gains across mapped processes using Lean Six Sigma DMAIC and BPMN'
+          },
+          project2: {
+            name: 'Guaxupé City Hall',
+            li1:  'Structuring of 50+ municipal projects with scope, schedule, risk management, and cost tracking (PMBoK)',
+            li2:  'Development of a project flight plan and visual tracking platform',
+            li3:  'Facilitation of workshops with stakeholders from multiple departments for scope alignment',
+            li4:  'Power BI dashboards and quantitative analysis to support data-driven decision-making',
+            li5:  'Implementation of visual management, governance rituals, and action plans (5W2H, PDCA)',
+            li6:  'Process mapping and redesign with BPMN (Bizagi Modeler)'
+          }
         },
         item2: {
           role:   'Quality Coordinator',
           period: 'Apr 2023 – Oct 2024',
-          body:   'Implementation and coordination of the quality management system, definition of material conformity criteria, supplier qualification, and conduct of internal audits. Process controls focused on reducing non-conformances.'
+          body:   'Responsible for structuring and coordinating the quality management system in an industrial environment. Led ISO 9001 implementation, conformity criteria definition, supplier qualification, and internal and external audits. Drove initiatives that significantly reduced non-quality costs, and implemented process controls, traceability, and performance indicators.',
+          li1:    '~30% reduction in non-quality costs through a material reclaim project via grinding of non-conforming parts',
+          li2:    'Full QMS implementation in a plastics manufacturing plant with ISO 9001 certification and FSC 22000 best practices',
+          li3:    'Implementation of a 3D dimensional inspection lab, enabling service to high-demand clients (Colgate, EPL)',
+          li4:    'Implementation of a cleanroom with controlled environment for clients with special production requirements',
+          li5:    'Conducted internal and external audits; qualified suppliers with on-site technical inspections',
+          li6:    'Built quality data system: KPIs, non-conformance analysis (RNC/CAPA), traceability, and process controls'
         },
         item3: {
           role:   'Process & Quality Consultant',
           period: 'Jul 2022 – Dec 2022',
-          body:   'Development of the Good Manufacturing Practices (GMP) manual, standardization of production processes, workflow mapping, and implementation of non-conformance controls at a fermented beverages startup.'
+          body:   'Full QMS implementation at a food-sector startup. Development of technical documentation (GMP, SOPs), standardization of production processes, and organization of the operational flow. Supported certification and increased production efficiency through process improvements.',
+          li1:    'Built the QMS from scratch: GMP manual, production SOPs, technical data sheets, and non-conformance controls',
+          li2:    'Redesigned the industrial kitchen layout and production flow, increasing efficiency and standardization',
+          li3:    'Obtained ISO 9001 certification — the company\'s first, enabling access to new distribution channels',
+          li4:    'Supported automation of administrative routines and billing processes, reducing operational rework'
         },
         item4: {
           role:   'Quality Control Intern',
           period: 'Apr 2021 – Jun 2022',
-          body:   'Support in quality management and development of standard operating procedures at a food-sector company.'
+          body:   'Support in production process control and quality compliance. Participated in laboratory analyses, applied good manufacturing practices, and contributed to the development of standard operating procedures.',
+          li1:    'Conducted laboratory analyses of organic products (sauces, spreads, condiments) throughout the production process',
+          li2:    'Verified GMP compliance, production control checklists, and post-production cleaning assessments',
+          li3:    'Supported development of SOPs and technical data sheets during an operational restructuring period'
         }
       },
       formacao: {
@@ -567,6 +631,35 @@
    Intercepta cliques em links âncora (#) e aplica scroll
    suave com compensação da altura da nav fixa (64px).
    ============================================================ */
+/* ============================================================
+   MÓDULO 6 — TIMELINE: EXPANDIR / RECOLHER (SAIBA MAIS)
+   ============================================================ */
+
+(function timelineToggle() {
+  document.querySelectorAll('.timeline__toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var card    = btn.closest('.timeline__card');
+      var details = card.querySelector('.timeline__details');
+      var isExpanded = card.classList.toggle('timeline__card--expanded');
+
+      btn.setAttribute('aria-expanded', String(isExpanded));
+
+      if (isExpanded) {
+        details.removeAttribute('hidden');
+      } else {
+        // Reaplica hidden após o fim da transição para que leitores de tela saibam que está recolhido
+        details.addEventListener('transitionend', function handler(e) {
+          if (e.propertyName !== 'opacity') return;
+          if (!card.classList.contains('timeline__card--expanded')) {
+            details.setAttribute('hidden', '');
+          }
+          details.removeEventListener('transitionend', handler);
+        });
+      }
+    });
+  });
+})();
+
 (function smoothScrollOffset() {
   var NAV_HEIGHT = 64; // Deve coincidir com --nav-height no CSS
 

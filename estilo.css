@@ -321,21 +321,11 @@ p {
   font-size: 10px;
 }
 
-/* Desktop: mostra o toggle standalone, oculta o li no nav__menu */
-@media (min-width: 768px) {
-  .lang-toggle--desktop { display: inline-flex; }
-  .nav__lang-item { display: none; }
-}
-
-/* Mobile: oculta o toggle desktop, mostra dentro do nav__menu */
-@media (max-width: 767px) {
-  .lang-toggle--desktop { display: none; }
-  .nav__lang-item { display: list-item; }
-  .lang-toggle--mobile {
-    font-size: var(--text-base);
-    padding: var(--space-sm) var(--space-lg);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
+/* nav__actions: agrupa lang-toggle + hamburguer à direita da nav bar */
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 /* --- Títulos de seção --- */
@@ -737,7 +727,7 @@ p {
   margin-top: var(--space-xs);
 }
 
-.timeline__body {
+.timeline__summary {
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
@@ -792,6 +782,131 @@ p {
   .timeline__marker {
     left: calc(-1 * var(--space-2xl) + 3px);
   }
+}
+
+/* --- Timeline: Expand/Collapse (Saiba Mais) --- */
+
+.timeline__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  padding: 4px 15px;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.timeline__toggle:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.timeline__toggle-less {
+  display: none;
+}
+
+.timeline__card--expanded .timeline__toggle-less {
+  display: inline;
+}
+
+.timeline__card--expanded .timeline__toggle-more {
+  display: none;
+}
+
+.timeline__toggle-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.timeline__card--expanded .timeline__toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Painel de detalhes — expansão suave via max-height */
+.timeline__details {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* Mantém display:block mesmo com o atributo hidden para que a transição funcione */
+.timeline__details[hidden] {
+  display: block !important;
+}
+
+.timeline__card--expanded .timeline__details {
+  max-height: 1400px;
+  opacity: 1;
+}
+
+/* Lista de realizações (Debken, Soh Kombucha, Legurmê) */
+.timeline__detail-list {
+  margin-top: var(--space-md);
+  padding-left: var(--space-lg);
+  padding-top: var(--space-md);
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Blocos de projeto (Aquila) */
+.timeline__project {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.timeline__project:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.timeline__project-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.timeline__project-logo {
+  max-height: 28px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.timeline__project-name {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.timeline__project-list {
+  padding-left: var(--space-lg);
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
 }
 
 /* --- Education Cards (Formação) --- */
